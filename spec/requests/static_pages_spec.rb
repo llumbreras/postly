@@ -4,17 +4,17 @@ describe "StaticPages" do
   describe "Home page" do
     it "contains 'Home' in the content" do
       
-      visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Home')
+      visit root_path
+      page.should have_selector('h1', :text => 'Postly')
     end
 
     it "contains the base title" do
-    	visit '/static_pages/home'
+    	visit root_path
     	page.should have_selector('title', :text => 'Postly')
     end
 
     it "should not have custom page title" do
-      visit '/static_pages/home'
+      visit root_path
       page.should_not have_selector('title', :text => '| Home')
     end
   end
@@ -22,11 +22,11 @@ describe "StaticPages" do
   describe "Help page" do
     it "contains 'Help' in the content" do
       
-      visit '/static_pages/help'
+      visit help_path
       page.should have_selector('h1', :text => 'Help')
     end
     it "contains the correct title" do
-    	visit '/static_pages/help'
+    	visit help_path
     	page.should have_selector('title', :text => 'Postly | Help')
     end    
   end
@@ -34,11 +34,11 @@ describe "StaticPages" do
   describe "About page" do
     it "contains 'About us' in the content" do
       
-      visit '/static_pages/about'
+      visit about_path
       page.should have_selector('h1', :text => 'About us')
     end
     it "contains the correct title" do
-    	visit '/static_pages/about'
+    	visit about_path
     	page.should have_selector('title', :text => 'Postly | About')
     end    
   end
@@ -46,11 +46,11 @@ describe "StaticPages" do
   describe "Contact page" do
     it "contains 'Contact' in the content" do
       
-      visit '/static_pages/contact'
+      visit contact_path
       page.should have_selector('h1', :text => 'Contact')
     end
     it "contains the correct title" do
-    	visit '/static_pages/contact'
+    	visit contact_path
     	page.should have_selector('title', :text => 'Postly | Contact')
     end    
   end
